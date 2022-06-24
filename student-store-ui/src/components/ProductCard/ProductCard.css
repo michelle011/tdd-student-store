@@ -1,0 +1,14 @@
+.pimg {
+  height: 250px;
+  width: 248px;
+  display: flex;
+}
+
+.product-card {
+  height: 350px;
+  width: 250px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  border: solid 1px var(--border-color);
+}

@@ -2,7 +2,7 @@ import * as React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
 
 import CheckoutForm from "../CheckoutForm/CheckoutForm";
 import Hero from "../Hero/Hero";
@@ -28,16 +28,25 @@ export default function App() {
   const url = `https://codepath-store-api.herokuapp.com/store`;
 
   useEffect(async () => {
+    console.log("hello");
     await axios
       .get(url)
       .then((response) => {
-        setProducts(response.data);
-        console.log(response.data);
+        // console.log("Response " + response);
+        let responseD = response.data;
+        setProducts(responseD.products); // from const above
+        // console.log(response.data.products);
       })
       .catch((err) => {
         console.log(err);
+        setError(err);
       });
-  }, []);
+  }, []); // empty brackets indicate do this only when component renders
+
+  useEffect(() => {
+    console.log(products);
+  }, [products]); // listen for changes in products
+  // every time change in products, do whats in curly braces
 
   // if (isOpen) {
   //   setIsOpen(false);
@@ -50,13 +59,21 @@ export default function App() {
       <BrowserRouter>
         <main>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route
+              path="/"
+              element={
+                <Home
+                  products={products}
+                  // handleOnToggle={handleOnToggle}
+                  iOpen={isOpen}
+                />
+              }
+            />
             <Route path="/products/:productId" element={<ProductDetail />} />
             <Route path="*" element={<NotFound />} />
             <Route path="navbar" element={<Navbar />} />
             <Route path="sidebar" element={<Sidebar />} />
           </Routes>
-          <Home />
         </main>
       </BrowserRouter>
     </div>

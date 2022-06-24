@@ -1,10 +1,16 @@
-import * as React from "react"
-import "./ProductView.css"
+import * as React from "react";
+import "./ProductView.css";
 
-export default function ProductView() {
+export default function ProductView({
+  product,
+  productId,
+  quantity,
+  handleAddItemToCart,
+  handleRemoveItemToCart,
+}) {
   return (
-    <div className="productView">
-      <p>Product View</p>
+    <div className="product-view">
+      <h1 className="product-id">Product # {productId}</h1>
     </div>
-  )
+  );
 }
