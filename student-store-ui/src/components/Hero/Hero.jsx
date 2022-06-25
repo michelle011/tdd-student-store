@@ -13,7 +13,7 @@ export default function Hero() {
             filling up your shopping cart. Checkout whenever you're ready.
           </p>
         </div>
-        <div class="media">
+        <div className="media">
           <img
             src="https://codepath-student-store-demo.surge.sh/assets/student_store_icon.18e5d61a.svg"
             alt="hero"

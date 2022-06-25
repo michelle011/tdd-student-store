@@ -1,0 +1,41 @@
+.sidebar-open {
+  width: 450px;
+  background-color: #22333b;
+  opacity: 95%;
+  z-index: 1;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding: 10px;
+}
+
+.sidebar-close {
+  width: 55px;
+  background-color: #274c77;
+  z-index: 1;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding: 10px;
+}
+
+.close-sidebar-button {
+  height: 20px;
+  width: 20px;
+  top: 0;
+}
+
+.open-sidebar-button {
+  height: 20px;
+  width: 20px;
+  top: 0;
+}
+
+.button-wrapper {
+  display: flex;
+  align-items: right;
+}

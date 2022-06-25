@@ -12,7 +12,23 @@ export default function Sidebar({
 }) {
   return (
     <section className="sidebar">
-      <p>Sidebar</p>
+      {isOpen ? (
+        <div className="sidebar-open">
+          <button
+            className="close-sidebar-button"
+            onClick={handleOnToggle}
+          ></button>
+        </div>
+      ) : (
+        <div className="sidebar-closed">
+          <div className="button-wrap">
+            <button
+              className="open-sidebar-button"
+              onClick={handleOnToggle}
+            ></button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

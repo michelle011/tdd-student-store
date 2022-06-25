@@ -1,8 +1,9 @@
+import "./App.css";
+
 import * as React from "react";
 import { useState, useEffect } from "react";
-import axios from "axios";
-import "./App.css";
 import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
+import axios from "axios";
 
 import CheckoutForm from "../CheckoutForm/CheckoutForm";
 import Hero from "../Hero/Hero";
@@ -18,9 +19,10 @@ import ShoppingCart from "../ShoppingCart/ShoppingCart";
 import Sidebar from "../Sidebar/Sidebar";
 
 export default function App() {
-  const [products, setProducts] = useState([]); //array of product objects, empty initially
+  // Initialize state variables and setter fns
   const [isFetching, setIsFetching] = useState(null); //boolean; represents whether App is currently fetching products from the API
   const [error, setError] = useState(""); //display message when something goes wrong with API requests
+  const [products, setProducts] = useState([]); //array of product objects, empty initially
   const [isOpen, setIsOpen] = useState(null); //represents whether the sidebar is open or not
   const [shoppingCart, setShoppingCart] = useState([]); //store state for users shopping cart (what they want and the quantity)
   const [checkoutForm, setCheckoutForm] = useState(null); //users info which will be sent to the API at checkout
@@ -48,24 +50,31 @@ export default function App() {
   }, [products]); // listen for changes in products
   // every time change in products, do whats in curly braces
 
-  // if (isOpen) {
-  //   setIsOpen(false);
-  // } else {
-  //   setIsOpen(true);
-  // }
+  // Event Handlers
+  const handleOnToggle = () => {
+    setIsOpen((item) => !item);
+  };
 
   return (
     <div className="app">
       <BrowserRouter>
         <main>
+          <Navbar />
+          <div className="sidebar">
+            <Sidebar
+              isOpen={isOpen}
+              shoppingCart={shoppingCart}
+              handleOnToggle={handleOnToggle}
+            />
+          </div>
           <Routes>
             <Route
               path="/"
               element={
                 <Home
                   products={products}
-                  // handleOnToggle={handleOnToggle}
-                  iOpen={isOpen}
+                  handleOnToggle={handleOnToggle}
+                  isOpen={isOpen}
                 />
               }
             />

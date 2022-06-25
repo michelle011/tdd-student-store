@@ -10,13 +10,12 @@ import ProductGrid from "../ProductGrid/ProductGrid";
 export default function Home(props) {
   return (
     <div className="home">
-      <Navbar />
       <Hero />
-      {/* <Sidebar handleOnToggle={props.handleOnToggle} /> */}
       <ProductGrid
         products={props.products}
         handleAddItemToCart={props.handleAddItemToCart}
         handleRemoveItemForCart={props.handleRemoveItemFromCart}
+        setIsFetching={props.setIsFetching}
       />
     </div>
   );
