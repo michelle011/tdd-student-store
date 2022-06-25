@@ -30,14 +30,11 @@ export default function App() {
   const url = `https://codepath-store-api.herokuapp.com/store`;
 
   useEffect(async () => {
-    console.log("hello");
     await axios
       .get(url)
       .then((response) => {
-        // console.log("Response " + response);
         let responseD = response.data;
         setProducts(responseD.products); // from const above
-        // console.log(response.data.products);
       })
       .catch((err) => {
         console.log(err);
