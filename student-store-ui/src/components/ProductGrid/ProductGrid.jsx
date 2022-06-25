@@ -15,7 +15,7 @@ export default function ProductGrid(props) {
                 key={idx}
                 handleAddItemToCart={props.handleAddItemToCart}
                 handleRemoveItemForCart={props.handleRemoveItemForCart}
-              ></ProductCard>
+              />
             );
           })
         : null}
