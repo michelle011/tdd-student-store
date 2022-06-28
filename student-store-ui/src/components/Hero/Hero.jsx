@@ -1,25 +1,29 @@
-import * as React from "react";
+import React from "react";
 import "./Hero.css";
 
+// Renders header and welcome message
 export default function Hero() {
   return (
     <div className="hero">
-      <div className="content">
-        <div className="intro">
-          <h1>Welcome!</h1>
-          <h1>Find Your Merch!</h1>
-          <p>
-            We We have all kinds of goodies. Click on any of the items to start
-            filling up your shopping cart. Checkout whenever you're ready.
-          </p>
-        </div>
-        <div className="media">
+      <div className="hero-top-section">
+        <p className="intro">
+          Welcome, <br />
+          Find your merch!
+        </p>
+        <div className="hero-img-section">
           <img
             src="https://codepath-student-store-demo.surge.sh/assets/student_store_icon.18e5d61a.svg"
-            alt="hero"
             className="hero-img"
+            alt="hero"
           ></img>
         </div>
+      </div>
+      <div className="hero-bottom-section">
+        <p className="description">
+          We have all kinds of goodies. Click on any of the items below to get
+          started and fill up your shopping cart. <br />
+          Checkout on the sidebar whenever you are ready!
+        </p>
       </div>
     </div>
   );

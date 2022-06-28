@@ -1,27 +1,37 @@
 import * as React from "react";
 import "./Navbar.css";
-import { Link } from "react-router-dom";
 import Logo from "../Logo/Logo";
+import SearchBar from "../SearchBar/SearchBar";
 
-const homeImg =
-  "https://www.freepnglogos.com/uploads/logo-home-png/chimney-home-icon-transparent-1.png";
-
+// Generates navigation bar that wil autoscroll to various page components renders logo in homepage
 export default function Navbar() {
   return (
-    <nav className="navbar">
-      <Logo />
-      <Link to="/">
-        <img className="home-image" src={homeImg}></img>
-      </Link>
-      <a className="anchor" href={"#buy-now"}>
-        Buy Now
-      </a>
-      <a className="anchor" href={"#about-us"}>
-        About Us
-      </a>
-      <a className="anchor" href={"#contact-us"}>
-        Contact Us
-      </a>
+    <nav>
+      <div className="navbar-container">
+        <Logo />
+        <div className="navbar-links">
+          <p className="item">
+            <a className="anchor" href="#home">
+              Home
+            </a>
+          </p>
+          <p className="item">
+            <a className="anchor" href="#about-us">
+              About Us
+            </a>
+          </p>
+          <p className="item">
+            <a className="anchor" href="#contact-us">
+              Contact Us
+            </a>
+          </p>
+          <p className="item">
+            <p className="anchor" href="#search-bar">
+              Buy Now
+            </p>
+          </p>
+        </div>
+      </div>
     </nav>
   );
 }

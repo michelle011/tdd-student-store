@@ -2,45 +2,54 @@ import * as React from "react";
 import "./ProductCard.css";
 import { Link } from "react-router-dom";
 
-export default function ProductCard({
-  product,
-  productId,
-  quantity,
-  handleAddItemToCart,
-  handleRemoveItemFromCart,
-  showDescription,
-}) {
+// Renders image, name, price, and quantity of products.
+// Buttons allow users to change quantity of products.
+export default function ProductCard(props) {
   return (
     <div className="product-card">
       <div className="media">
-        <Link to={"/products/" + productId}>
-          <img className="product-image" src={product.image}></img>
+        <Link
+          to={"/products/" + props.productId}
+          onClick={() => props.setIsFetching(true)}
+        >
+          <img
+            className="product-image"
+            src={props.image}
+            alt={props.name}
+          ></img>
         </Link>
-      </div>
-      <div className="product-info">
-        <p className="product-name">{product.name}</p>
-        <p className="product-price">${product.price.toFixed(2)}</p>
-        {quantity > 0 ? <p className="quantity">{quantity}</p> : null}
       </div>
 
       <div>
-        {showDescription ? (
-          <p className="product-description">{product.description}</p>
+        <p className="product-name">{props.name}</p>
+
+        {props.quantity > 0 ? (
+          <p className="quantity">{props.quantity}</p>
         ) : null}
       </div>
-      <div className="add-remove-btns">
+
+      <div className="item-description">
+        {props.showDescription ? (
+          <>
+            <p>{props.description}</p>
+          </>
+        ) : null}
+      </div>
+      <p className="product-price">${props.price.toFixed(2)}</p>
+
+      <div className="buttons">
         <button
-          className="remove-btn"
+          className="remove"
           onClick={() => {
-            handleRemoveItemFromCart(productId);
+            props.handleRemoveItemFromCart(props.productId);
           }}
         >
           -
         </button>
         <button
-          className="add-btn"
+          className="add"
           onClick={() => {
-            handleAddItemToCart(productId);
+            props.handleAddItemToCart(props.productId);
           }}
         >
           +

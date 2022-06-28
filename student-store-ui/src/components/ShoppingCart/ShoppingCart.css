@@ -1,0 +1,40 @@
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  border: white;
+  border-width: 10px;
+  outline: white;
+}
+
+.title {
+  font-size: 25px;
+  text-align: center;
+}
+
+.taxes {
+  color: black;
+  margin-top: 0px;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.total-price {
+  color: black;
+  margin-top: 1px;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-row {
+  background: white;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+}
+
+.all-info {
+  border-radius: 5px;
+}
