@@ -5,9 +5,9 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="content">
-        <div class="top">
-          <div class="links">
-            <div class="link-column">
+        <div className="top">
+          <div className="links">
+            <div className="link-column">
               <h4>Categories</h4>
               <ul>
                 <li>All Categories</li>
@@ -17,7 +17,7 @@ export default function Footer() {
                 <li>Tech</li>
               </ul>
             </div>
-            <div class="link-column">
+            <div className="link-column">
               <h4>Company</h4>
               <ul>
                 <li>About Us</li>
@@ -27,7 +27,7 @@ export default function Footer() {
                 <li>Careers</li>
               </ul>
             </div>
-            <div class="link-column">
+            <div className="link-column">
               <h4>Support</h4>
               <ul>
                 <li>Contact Us</li>
@@ -37,7 +37,7 @@ export default function Footer() {
                 <li>Open Dispute</li>
               </ul>
             </div>
-            <div class="link-column">
+            <div className="link-column">
               <h4>Account</h4>
               <ul>
                 <li>Login</li>
@@ -46,7 +46,7 @@ export default function Footer() {
                 <li>My Orders</li>
               </ul>
             </div>
-            <div class="link-column">
+            <div className="link-column">
               <h4>Socials</h4>
               <ul>
                 <li>Facebook</li>

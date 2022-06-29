@@ -37,17 +37,22 @@ export default function App() {
    */
   useEffect(async () => {
     await axios
-      .get(`https://codepath-store-api.herokuapp.com/store`)
+      .get(`http://localhost:3001/store`)
       .then((response) => {
         {
-          response.data.products
-            ? setSelectedProducts(response.data.products)
+          console.log(response);
+          response.data
+            ? setSelectedProducts(response.data)
             : setError("No products found.");
         }
       })
-      .catch((err) => {
-        console.log(err);
-        setError(err);
+      .catch((error) => {
+        if (!error.response) {
+          // network error
+          this.errorStatus = "Error: Network Error";
+        } else {
+          this.errorStatus = error.response.data.message;
+        }
       });
   }, []);
 
