@@ -19,7 +19,7 @@ Selling merchandise in the modern era requires digital solutions. For this proje
 - [x] User can click the '+' button on a product cart to increment that product in the shopping cart.
 - [x] User can click the '-' button on a product cart to increment that product in the shopping cart.
 - [x] Shopping cart displays a table of products, quantities, subtotal, tax, and total.
-- [ ] User can check out, and can view receipt upon completion.
+- [x] User can check out, and can view receipt upon completion.
 
 #### Stretch Features
 
@@ -27,7 +27,7 @@ Selling merchandise in the modern era requires digital solutions. For this proje
 - [x] User sees a "not found" display when searching for a nonexistent product.
 - [x] Create an endpoint for fetching all orders in the database, and an endpoint for serving an individual order based on its id.
 - [x] Build a page in the UI that displays the list of all past orders and lets the user click on any individual order to take them to a more detailed page of the transaction.
-- [] Allow users to use an input to filter orders by the email of the person who placed the order.
+- [x] Allow users to use an input to filter orders by the email of the person who placed the order.
 
 ### Passing Automated Tests
 
@@ -304,5 +304,3 @@ add response here.
 ### Shout out
 
 Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
-
-Shoutout to Adriana for helping me a lot with getting started.
