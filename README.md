@@ -295,7 +295,7 @@ If I had more time, I would try to focus on CSS to make the website easier to na
 
 - Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-add response here.
+I had more content to show for my demo this week than I did last week. Some of my peers had nice styles which I liked.
 
 ### Open-source libraries used
 
