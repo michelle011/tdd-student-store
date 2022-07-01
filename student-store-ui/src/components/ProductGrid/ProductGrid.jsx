@@ -8,9 +8,8 @@ export default function ProductGrid(props) {
   return (
     <div className="product-grid-section">
       <div className="product-grid">
-        {props.products.map((currProduct) => {
+        {props.products.map((currProduct, idx) => {
           let quantity = 0;
-
           if (typeof props.shoppingCart != "undefined") {
             let currItem = props.shoppingCart.find(
               (cart) => cart["itemId"] === currProduct.id
@@ -28,6 +27,7 @@ export default function ProductGrid(props) {
             foundSearch = true;
             return (
               <ProductCard
+                key={idx}
                 category={currProduct.category}
                 description={currProduct.description}
                 showDescription={false}

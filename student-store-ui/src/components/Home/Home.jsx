@@ -17,8 +17,9 @@ export default function Home(props) {
       />
 
       <div className="selector">
-        {props.categories.map((category) => (
+        {props.categories.map((category, idx) => (
           <Selector
+            key={idx}
             label={category}
             isActive={props.selectedCategory == category}
             onClick={() => {

@@ -21,12 +21,12 @@ export default function ShoppingCart({ isOpen, products, shoppingCart }) {
             <span className="center">Cost</span>
           </div>
 
-          {shoppingCart.map((item) => {
+          {shoppingCart.map((item, idx) => {
             let currCost = item.quantity * products[item.itemId - 1].price;
             subtotal += currCost;
             taxes = Math.ceil(subtotal * 0.0875 * 100) / 100;
             return (
-              <div className="product-row">
+              <div className="product-row" key={idx}>
                 <span className="cart-product-name">
                   {products[item.itemId - 1].name}
                 </span>

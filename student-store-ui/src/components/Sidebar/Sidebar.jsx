@@ -10,7 +10,7 @@ export default function Sidebar(props) {
   return (
     <section className="sidebar">
       {
-        // toggles if the sidebar is open or not
+        // toggle open/close sidebar
         props.isOpen ? (
           <div className="sidebar-opened">
             <button
@@ -35,6 +35,7 @@ export default function Sidebar(props) {
               error={props.error}
               handleOnCheckoutFormChange={props.handleOnCheckoutFormChange}
               handleOnSubmitCheckoutForm={props.handleOnSubmitCheckoutForm}
+              receipt={props.receipt}
             />
           </div>
         ) : (

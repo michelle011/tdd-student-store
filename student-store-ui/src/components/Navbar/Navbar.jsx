@@ -26,9 +26,9 @@ export default function Navbar() {
             </a>
           </p>
           <p className="item">
-            <p className="anchor" href="#search-bar">
+            <a className="anchor" href="#search-bar">
               Buy Now
-            </p>
+            </a>
           </p>
         </div>
       </div>
