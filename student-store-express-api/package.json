@@ -10,6 +10,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^5.0.0-beta.1",
+    "findstr": "^1.0.4",
     "lowdb": "^1.0.0",
     "morgan": "^1.10.0"
   }

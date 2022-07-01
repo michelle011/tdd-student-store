@@ -1,5 +1,5 @@
 .navbar-container {
-  background: #151515;
+  background: #12142b;
   display: flex;
   flex-direction: row;
   width: 97.5vw;
@@ -20,6 +20,10 @@
   color: white;
 }
 
+.link {
+  color: white;
+}
+
 .anchor {
   text-decoration: none;
   color: white;
@@ -37,4 +41,8 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+.orders {
+  color: white;
 }

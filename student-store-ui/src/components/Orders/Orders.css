@@ -1,0 +1,16 @@
+.order-grid {
+  width: 93vw;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+}
+
+.order-title {
+  width: 96.5vw;
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
+  color: black;
+}

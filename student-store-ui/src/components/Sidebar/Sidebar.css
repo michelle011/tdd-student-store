@@ -13,7 +13,7 @@
 }
 
 .sidebar-closed {
-  width: 60px;
+  width: 70px;
   background-color: #051425;
   z-index: 1;
   color: white;
@@ -27,12 +27,12 @@
 
 .open-sidebar-btn {
   z-index: 20;
-  font-size: 35px;
+  font-size: 42px;
 }
 
 .open-sidebar-btn:hover {
   z-index: 20;
-  font-size: 36px;
+  font-size: 44px;
   cursor: pointer;
 }
 

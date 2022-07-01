@@ -1,15 +1,59 @@
 .checkout-button {
+  outline: rgb(198, 198, 198);
+  color: rgb(198, 198, 198);
+  border: 2px solid rgb(198, 198, 198);
+  border-radius: 5px;
+  font-size: 15px;
+  margin-top: 15px;
+  position: absolute;
+  transform: translate(300%, 70%);
+  font-size: 18px;
+  border-radius: 20px;
+}
+
+.checkout-button:hover {
   outline: white;
   color: white;
   border: 2px solid white;
   border-radius: 5px;
   font-size: 15px;
+  margin-top: 15px;
+  position: absolute;
+  transform: translate(300%, 70%);
+  font-size: 18px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+p.notification {
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+p.label {
+  text-align: center;
+  padding-top: 15px;
+}
+
+.control {
+  align-items: center;
+  text-align: center;
+}
+
+.checkout-form {
+  align-items: center;
 }
 
 .checkout-form-input {
   width: 35vh;
+  border-radius: 50px;
+  height: 35px;
+  padding: 10px;
 }
 
-.checkout-button {
-  margin-top: 15px;
+div.error {
+  text-align: center;
+  padding-top: 7px;
+  color: rgb(255, 238, 138);
+  font-size: 18px;
 }

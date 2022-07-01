@@ -20,7 +20,7 @@ export default function ProductDetail(props) {
     async function getInfo() {
       props.setIsFetching(true);
       await axios
-        .get(`https://codepath-store-api.herokuapp.com/store/${productId}`)
+        .get(`http://localhost:3001/store/${productId}`)
         .then((response) => {
           setProduct(response.data.product);
           props.setIsFetching(false);

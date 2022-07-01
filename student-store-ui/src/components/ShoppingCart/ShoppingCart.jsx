@@ -7,7 +7,7 @@ export default function ShoppingCart({ isOpen, products, shoppingCart }) {
   let taxes = 0;
   return (
     <section className="shopping-cart">
-      <p className="title">Shopping Cart</p>
+      <p className="title">🛒 Shopping Cart</p>
       {shoppingCart.length == 0 ? (
         <p className="notification">
           No items added to cart yet. Start shopping now!{" "}
@@ -43,9 +43,8 @@ export default function ShoppingCart({ isOpen, products, shoppingCart }) {
 
           <div className="all-info">
             <div className="receipt">
-              <span className="subtotal">Subtotal</span>
-              <span></span>
-              <span></span>
+              <span className="subtotal">Subtotal:</span>
+              <span> </span>
               <span>${subtotal.toFixed(2)}</span>
             </div>
 

@@ -6,7 +6,7 @@ export default function SearchBar(props) {
     <div className="search-bar-section">
       <div className="search-bar" id="search-bar">
         <input
-          placeholder="Search Store"
+          placeholder="Search"
           className="input"
           value={props.searchBar}
           onChange={(event) =>

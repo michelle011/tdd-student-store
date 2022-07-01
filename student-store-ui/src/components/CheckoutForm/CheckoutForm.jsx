@@ -5,7 +5,7 @@ import "./CheckoutForm.css";
 export default function CheckoutForm(props) {
   return (
     <section className="checkout-form">
-      <p className="title">Payment Info</p>
+      <p className="title">💲 Payment Info</p>
 
       {/* Name Input */}
       <div className="input-field">
@@ -61,19 +61,13 @@ export default function CheckoutForm(props) {
             <div className="success">
               <h1>Success!</h1>
               <ul>
-                {props.receipt.map((item) => (
-                  <li>{item}</li>
-                ))}
+                {props.receipt.map((item, idx) => (
+                  <li key={idx}>{item}</li>
+                ))}{" "}
               </ul>
             </div>
           ) : (
-            <div className="error">
-              <ul>
-                {props.receipt.map((item) => (
-                  <li>{item}</li>
-                ))}
-              </ul>
-            </div>
+            <div className="error">⚠ {props.error}.</div>
           )}
         </>
       ) : (

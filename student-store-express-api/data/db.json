@@ -145,5 +145,67 @@
       "price": 999.99
     }
   ],
-  "purchases": []
+  "purchases": [
+    {
+      "id": 1,
+      "name": "michelle",
+      "email": "mjfoxmichelle@gmail.com",
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 1
+        },
+        {
+          "itemId": 3,
+          "quantity": 1
+        },
+        {
+          "itemId": 6,
+          "quantity": 2
+        },
+        {
+          "itemId": 7,
+          "quantity": 1
+        }
+      ],
+      "total": "$53.79",
+      "createdAt": "Thu Jun 30 2022 23:08:56 GMT-0700 (Pacific Daylight Time)",
+      "receipt": [
+        "1 total Flamin Hot Cheetos purchased at a cost of $1.50 for a total cost of $1.50",
+        "1 total Cinnamon Rolls purchased at a cost of $2.99 for a total cost of $2.99",
+        "2 total Bar Code Shirts purchased at a cost of $19.99 for a total cost of $39.98",
+        "1 total Striped Socks purchased at a cost of $4.99 for a total cost of $4.99",
+        "Before taxes, the subtotal was $49.46",
+        "After taxes and fees were applied, the total comes out to $53.79"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "ann",
+      "email": "ann@gmail.com",
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 1
+        },
+        {
+          "itemId": 3,
+          "quantity": 1
+        },
+        {
+          "itemId": 11,
+          "quantity": 2
+        }
+      ],
+      "total": "$439.88",
+      "createdAt": "Thu Jun 30 2022 23:10:23 GMT-0700 (Pacific Daylight Time)",
+      "receipt": [
+        "1 total Flamin Hot Cheetos purchased at a cost of $1.50 for a total cost of $1.50",
+        "1 total Cinnamon Rolls purchased at a cost of $2.99 for a total cost of $2.99",
+        "2 total Matching Rings purchased at a cost of $200.00 for a total cost of $400.00",
+        "Before taxes, the subtotal was $404.49",
+        "After taxes and fees were applied, the total comes out to $439.88"
+      ]
+    }
+  ]
 }

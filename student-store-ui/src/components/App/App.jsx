@@ -6,9 +6,12 @@ import { useEffect, useState } from "react";
 
 import axios from "axios";
 
+import Footer from "../Footer/Footer";
 import Home from "../Home/Home";
 import Navbar from "../Navbar/Navbar";
 import NotFound from "../NotFound/NotFound";
+import Orders from "../Orders/Orders";
+import OrderDetail from "../OrderDetail/OrderDetail";
 import ProductDetail from "../ProductDetail/ProductDetail";
 import Sidebar from "../Sidebar/Sidebar";
 
@@ -23,7 +26,6 @@ export default function App() {
   const [shoppingCart, setShoppingCart] = useState([]); // store state for users shopping cart (what they want and the quantity)
   const [checkoutForm, setCheckoutForm] = useState({ email: "", name: "" }); // users info which will be sent to the API at checkout
   const [receipt, setReceipt] = useState();
-  const [selectedEmail, setSelectedEmail] = useState("");
   const [orders, setOrders] = useState([]);
   const categories = [
     "All Categories",
@@ -38,7 +40,7 @@ export default function App() {
    */
   useEffect(async () => {
     await axios
-      .get(`https://codepath-store-api.herokuapp.com/store`)
+      .get(`http://localhost:3001/store`)
       .then((response) => {
         {
           console.log(response);
@@ -59,6 +61,27 @@ export default function App() {
 
   const currentItems = products.filter((item) => {
     return item.category == selectedCategory;
+  });
+
+  // Create 'GET' request to API's orders endpoint with axios.
+  useEffect(async () => {
+    try {
+      const response = await axios.get("http://localhost:3001/orders");
+      setIsFetching(false);
+      if (response.statusText != "OK") {
+        setError(response.statusText);
+      } else if (response.data.orders.length == 0) {
+        setError("Did not find any orders");
+      } else {
+        setOrders(response.data.orders);
+      }
+    } catch (err) {
+      setError(err);
+    }
+  }, []);
+
+  const currentOrders = orders.filter((item) => {
+    return item.email.toLowerCase().includes(searchBar.toLowerCase());
   });
 
   /* * * Event Handlers * * */
@@ -114,19 +137,19 @@ export default function App() {
   // Submits user order to API using 'POST' request
   const handleOnSubmitCheckoutForm = (checkoutForm, shoppingCart) => {
     axios
-      .post("https://codepath-store-api.herokuapp.com/store", {
+      .post("http://localhost:3001/store", {
         user: checkoutForm,
         shoppingCart: shoppingCart,
       })
       .then((response) => {
-        setReceipt(response.data.purchase.receipt.lines);
+        setReceipt(response.data.purchase.receipt);
         setShoppingCart([]);
         setCheckoutForm({ email: "", name: "" });
         setError("Success!");
       })
       .catch((error) => {
-        setReceipt([error.response.data.error.message]);
-        setError("Error");
+        setReceipt([error.response]);
+        setError([error.response.data.error.message]);
       });
   };
 
@@ -184,7 +207,7 @@ export default function App() {
 
                   <div className="about-us" id="about-us">
                     <h3>ABOUT US</h3>
-                    <div className="about-us-wrapper">
+                    <div className="about-us-section">
                       <div className="summary">
                         <p className="summary-text">
                           The codepath student store offers great products at
@@ -202,23 +225,26 @@ export default function App() {
                       </div>
 
                       <div className="about-image">
-                        <img src="" className="about-logo"></img>
+                        <img
+                          src="https://codepath-student-store-demo.surge.sh/assets/giant_codepath.6952ef57.svg"
+                          className="about-logo"
+                        ></img>
                       </div>
                     </div>
                   </div>
 
                   <div className="contact-us" id="contact-us">
                     <h3>CONTACT US</h3>
-                    <div className="contact-us-wrapper">
-                      <p>Phone Number: (123) 456-7890</p>
-                      <p>Email: test@codepath.org</p>
-                      <p>Address: 123 Fake Address, San Francisco, CA</p>
+                    <div className="contact-us-section">
+                      <p>📞 Phone Number: 1-800-CODEPATH</p>
+                      <p>📧 Email: code@path.org</p>
+                      <p>🏠 Address: 123 Fake Street, San Francisco, CA</p>
                     </div>
                   </div>
 
                   <footer className="footer">
-                    <div className="footer-wrapper">
-                      <h3>FOOTER INFO</h3>
+                    <div className="footer-section">
+                      <Footer></Footer>
                     </div>
                   </footer>
                 </>
@@ -235,6 +261,33 @@ export default function App() {
                   isFetching={isFetching}
                   setIsFetching={setIsFetching}
                   setError={setError}
+                />
+              }
+            />
+
+            <Route
+              path="/orders"
+              element={
+                <Orders
+                  orders={currentOrders}
+                  setOrders={setOrders}
+                  products={products}
+                  showRest={false}
+                  searchBar={searchBar}
+                  handleOnSearchBarChange={handleOnSearchBarChange}
+                />
+              }
+            />
+
+            <Route
+              path="/orders/:orderId"
+              element={
+                <OrderDetail
+                  shoppingCart={shoppingCart}
+                  isFetching={isFetching}
+                  setIsFetching={setIsFetching}
+                  setError={setError}
+                  products={products}
                 />
               }
             />

@@ -38,3 +38,11 @@
 .all-info {
   border-radius: 5px;
 }
+
+section.shopping-cart {
+  border-radius: 10px;
+}
+
+span.cart-product-quantity {
+  align-items: center;
+}

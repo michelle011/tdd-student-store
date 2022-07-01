@@ -1,0 +1,27 @@
+.order-display {
+  background-color: white;
+  padding-left: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 10px;
+  margin-left: auto;
+  width: 96.5vw;
+}
+
+.order-display {
+  text-decoration: none;
+}
+
+h1 {
+  text-decoration: none;
+}
+
+.extended-description {
+  text-decoration: none;
+  color: black;
+}
+
+.test {
+  text-decoration: none;
+  color: black;
+}
